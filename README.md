@@ -32,18 +32,18 @@ You can define your launcher configuration directly inside `pubspec.yaml`:
 ```yaml
 auto_launcher:
   app_name:
-    build: BIDC Internal Appss
+    build: My App
     enable: true
   version:
-    build: 1.0.0+2
+    build: 1.0.0+1
     enable: true
   bundle_id:
     platforms:
       android:
-        build: com.bidc.internal_appss
+        build: com.example.android
         enable: true
       ios:
-        build: com.bidc.internal.app
+        build: com.example.ios
         enable: true
   app_icon:
     image_path: "assets/icons/app_logo.png"
@@ -84,7 +84,7 @@ dart run auto_launcher
 
 | Key    | Type   | Description         |
 | ------ | ------ | ------------------- |
-| build  | String | e.g., `1.0.0+2`     |
+| build  | String | e.g., `1.0.0+1`     |
 | enable | Bool   | Whether to apply it |
 
 ### `bundle_id`
@@ -110,18 +110,18 @@ dart run auto_launcher
 ```yaml
 auto_launcher:
   app_name:
-    build: BIDC Internal Appss
+    build: My App
     enable: true
   version:
-    build: 1.0.0+2
+    build: 1.0.0+1
     enable: true
   bundle_id:
     platforms:
       android:
-        build: com.bidc.internal_appss
+        build: com.example.android
         enable: true
       ios:
-        build: com.bidc.internal.app
+        build: com.example.ios
         enable: true
   app_icon:
     image_path: "assets/icons/app_logo.png"
