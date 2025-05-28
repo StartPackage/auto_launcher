@@ -134,29 +134,3 @@ auto_launcher:
 ```
 
 ---
-
-## 🧪 Testing
-
-```bash
-flutter test
-```
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
-
----
-
-## 🔗 Links
-
-* [GitHub Repository](https://github.com/StartPackage/auto_launcher)
-* [Pub.dev Package](https://pub.dev/packages/auto_launcher) *(coming soon)*
-
-```
-
----
-
-Would you like me to generate this file and update your current project with it so you can commit and publish it right away?
-```
