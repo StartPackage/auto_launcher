@@ -1,6 +1,3 @@
-Here is the **completed `README.md`** with the added sections you requested: **Guide**, **Attributes**, and **Example**, all based on your `auto_launcher` package:
-
----
 
 # ✨ Auto Launcher
 
@@ -132,5 +129,3 @@ auto_launcher:
       android: true
       ios: true
 ```
-
----
