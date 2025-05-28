@@ -2,6 +2,9 @@ import 'dart:io';
 
 import 'cli_formatter.dart';
 
+/// Changes the application name in the launcher configuration.
+///
+/// If [newName] is empty or blank, the operation is skipped with a failure log.
 void changeAppName(String newName) {
   if (newName.trim().isEmpty) {
     CliFormatter.printLogFormat(

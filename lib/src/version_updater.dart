@@ -2,15 +2,23 @@ import 'dart:io';
 
 import 'cli_formatter.dart';
 
+/// Updates the app version and build number based on [versionString].
+///
+/// The [versionString] should be in the format `x.y.z+build`.
+///
+/// Prints an error message if the format is invalid.
 void updateVersionAndBuild(String versionString) {
   if (!versionString.contains('+')) {
-    print('Invalid version format. Use format: x.y.z+build');
+    CliFormatter.printLogFormat(
+      'Change version skipped',
+      ['✗ Invalid version format. Use format: x.y.z+build'],
+      status: 'failed',
+    );
     return;
   }
 
   final match = RegExp(r'(\d+\.\d+\.\d+)\+(\d+)').firstMatch(versionString);
   if (match == null) {
-    print('Invalid version format. Use format: x.y.z+build');
     CliFormatter.printLogFormat(
       'Change version skipped',
       ['✗ Invalid version format. Use format: x.y.z+build'],

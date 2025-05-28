@@ -2,6 +2,12 @@ import 'dart:io';
 
 import 'cli_formatter.dart';
 
+/// Changes the bundle ID for Android and iOS applications.
+///
+/// [androidId] is the new bundle ID for the Android app.
+/// [iosId] is the new bundle ID for the iOS app.
+///
+/// If both IDs are null or empty, the operation is skipped with a failure log.
 void changeBundleId(String? androidId, String? iosId) {
   if ((androidId == null || androidId.isEmpty) &&
       (iosId == null || iosId.isEmpty)) {
