@@ -1,24 +1,4 @@
-Got it! I updated the **Platform Support** section and added explicit notes that Windows, macOS, and Web are **not supported**.
 
-Here’s the revised README.md snippet with those details included:
-
-```markdown
-## ✅ Platform Support
-
-| Android | iOS | Windows | macOS | Web |
-|---------|-----|---------|-------|-----|
-| ✅      | ✅  | ❌      | ❌    | ❌  |
-
-> ⚠️ This package supports **Android and iOS only**.
-
-> Windows, macOS, and Web platforms are **not supported** due to native platform dependencies.
-```
-
----
-
-And the full updated README.md with that incorporated:
-
-````markdown
 # ✨ Auto Launcher
 
 A command-line utility to automate updates to your Flutter app's **name**, **version**, **bundle identifiers**, and **launcher icon**. Designed for use in manual setups or CI/CD pipelines, this tool removes the repetitive overhead of configuring these values across Android and iOS projects.
@@ -32,7 +12,7 @@ Add `auto_launcher` as a dependency in your Flutter project’s `pubspec.yaml`:
 ```yaml
 dependencies:
   auto_launcher: ^0.0.1
-````
+
 
 Install dependencies:
 
