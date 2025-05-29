@@ -22,7 +22,7 @@ void runAutoLauncher(List<String> args) async {
 
   CliFormatter.printLogFormat(
     'Version: 0.0.1',
-    ['👉👉👉 AUTO LAUNCHER 👈👈👈','','Launching package...'],
+    ['👉👉👉 AUTO LAUNCHER 👈👈👈', '', 'Launching package...'],
   );
 
   print('');
@@ -71,8 +71,8 @@ void runAutoLauncher(List<String> args) async {
 }
 
 bool _isEnabled(dynamic section) {
-  if (section is Map &&
-      (section['enable'] == true || section['enbale'] == true)) {
+  final enable = section['enable'];
+  if (enable is bool && enable == true) {
     return true;
   }
   return false;
