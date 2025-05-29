@@ -5,23 +5,6 @@ A command-line utility to automate updates to your Flutter app's **name**, **ver
 
 ---
 
-## 🚀 Getting Started
-
-Add `auto_launcher` as a dependency in your Flutter project’s `pubspec.yaml`:
-
-```yaml
-dependencies:
-  auto_launcher: ^0.0.1
-
-
-Install dependencies:
-
-```bash
-flutter pub get
-```
-
----
-
 ## ✅ Platform Support
 
 | Android | iOS | Windows | macOS | Web |
