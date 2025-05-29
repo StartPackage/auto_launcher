@@ -6,6 +6,14 @@ version: 0.0.1
 homepage:
 repository: https://github.com/StartPackage/auto_launcher
 
+platforms:
+  android: true
+  ios: true
+  web: false
+  linux: false
+  macos: false
+  windows: false
+
 
 environment:
   sdk: ^3.6.1

@@ -49,7 +49,7 @@ void changeBundleId(String? androidId, String? iosId) {
       androidSuccess = true;
       final color = androidSuccess ? '\x1B[96m' : '\x1B[95m';
 
-      messages.add('$color✔ Android:\x1B[0m $androidId$color');
+      messages.add('$color✔ Android:\x1B[0m $androidId$color\x1B[0m');
     } catch (e) {
       messages.add('⚠ Error updating Android bundle ID: $e');
     }
@@ -84,7 +84,7 @@ void changeBundleId(String? androidId, String? iosId) {
       iosSuccess = true;
       final color = iosSuccess ? '\x1B[96m' : '\x1B[95m';
 
-      messages.add('$color✔ iOS:\x1B[0m $iosId$color');
+      messages.add('$color✔ iOS:\x1B[0m $iosId$color\x1B[0m');
     } catch (e) {
       messages.add('⚠ Error updating iOS bundle ID: $e');
     }
