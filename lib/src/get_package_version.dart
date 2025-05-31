@@ -18,11 +18,18 @@ String getPackageVersion() {
 
     if (thisPackage == null) return 'Unknown';
 
-    final rootUri = thisPackage['rootUri'] as String;
-    final absolutePath = p.normalize(p.join(Directory.current.path, rootUri));
-    final pubspecPath = p.join(absolutePath, 'pubspec.yaml');
+    String rootUri = thisPackage['rootUri'] as String;
+    String pubspecPath;
 
-    final pubspecFile = File(pubspecPath);
+    if (Uri.parse(rootUri).isAbsolute) {
+      // Absolute URI (rare)
+      pubspecPath = p.join(Uri.parse(rootUri).toFilePath(), 'pubspec.yaml');
+    } else {
+      // Relative URI
+      pubspecPath = p.join(Directory.current.path, rootUri, 'pubspec.yaml');
+    }
+
+    final pubspecFile = File(p.normalize(pubspecPath));
     if (!pubspecFile.existsSync()) return 'Unknown';
 
     final content = pubspecFile.readAsStringSync();
