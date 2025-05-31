@@ -1,16 +1,14 @@
 
 # ✨ Auto Launcher
 
-A command-line utility to automate updates to your Flutter app's **name**, **version**, **bundle identifiers**, and **launcher icon**. Designed for use in manual setups or CI/CD pipelines, this tool removes the repetitive overhead of configuring these values across Android and iOS projects.
+> Automate app name, version, bundle ID, and launcher icon updates across Android and iOS — ideal for CI/CD and manual workflows.
 
 ---
 
-## 🆕 Update
+## 📦 What's New in v0.0.3
 
-**v0.0.3 – Improvements**
-
-* Fixed app icon generation for Android and iOS
-* Improved compatibility with other packages by adjusting dependencies
+* 🎯 Fixed: App icon generation now works on Android and iOS  
+* 🔄 Improved: Dependency compatibility with commonly used packages
 
 ---
 
@@ -23,6 +21,13 @@ A command-line utility to automate updates to your Flutter app's **name**, **ver
 > ⚠️ This package supports **Android and iOS only**.
 
 > Windows, macOS, and Web platforms are **not supported** due to native platform dependencies.
+
+---
+
+## 🧰 Requirements
+
+- Dart SDK: `>=3.6.1 <4.0.0`
+- Flutter project targeting Android and/or iOS
 
 ---
 
@@ -63,7 +68,7 @@ auto_launcher:
     platform:
       android: true
       ios: true
-```
+````
 
 ### 2. Run the package
 
@@ -140,4 +145,17 @@ auto_launcher:
     platform:
       android: true
       ios: true
+```
+
+---
+
+## 📦 GitHub Usage
+
+To use the latest version directly from GitHub:
+
+```yaml
+dependencies:
+  auto_launcher:
+    git:
+      url: https://github.com/StartPackage/auto_launcher
 ```
