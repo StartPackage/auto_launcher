@@ -11,6 +11,7 @@ import 'src/config_loader.dart';
 import 'src/app_name_updater.dart';
 import 'src/bundle_id_updater.dart';
 import 'src/cli_formatter.dart';
+import 'src/get_package_version.dart';
 import 'src/version_updater.dart';
 
 /// Entry point for CLI
@@ -21,7 +22,7 @@ void runAutoLauncher(List<String> args) async {
   }
 
   CliFormatter.printLogFormat(
-    'Version: 0.0.1',
+    'Version: ${getPackageVersion()}',
     ['👉👉👉 AUTO LAUNCHER 👈👈👈', '', 'Launching package...'],
   );
 
