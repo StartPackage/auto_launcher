@@ -5,6 +5,15 @@ A command-line utility to automate updates to your Flutter app's **name**, **ver
 
 ---
 
+## 🆕 Update
+
+**v0.0.3 – Improvements**
+
+* Fixed app icon generation for Android and iOS
+* Improved compatibility with other packages by adjusting dependencies
+
+---
+
 ## ✅ Platform Support
 
 | Android | iOS | Windows | macOS | Web |

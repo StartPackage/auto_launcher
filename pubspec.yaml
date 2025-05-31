@@ -2,7 +2,7 @@ name: auto_launcher
 description: >
   A Flutter utility to automatically update the app's name, version,
   bundle identifiers, and app's icon across Android and iOS platforms.
-version: 0.0.2
+version: 0.0.3
 homepage:
 repository: https://github.com/StartPackage/auto_launcher
 
