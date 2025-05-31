@@ -63,8 +63,6 @@ void runAutoLauncher(List<String> args) async {
   print('');
   print('');
   print('');
-  // print('==> AUTO LAUNCHER FINISHED <==');
-  // print('Thank you! ❤️');
   CliFormatter.printLogFormat(
     '💚💚💚  Thank you!  💚💚💚',
     ['✔ All tasks completed successfully!'],
