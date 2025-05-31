@@ -26,6 +26,9 @@ void runAutoLauncher(List<String> args) async {
     ['👉👉👉 AUTO LAUNCHER 👈👈👈', '', 'Launching package...'],
   );
 
+  print('[DEBUG] Starting runAutoLauncher');
+  print('[DEBUG] Version result: ${getPackageVersion()}');
+
   print('');
   print('');
   print('');
