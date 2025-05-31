@@ -1,14 +1,23 @@
 
+## ✅ Final Reviewed Version With Suggestions Applied
+
+### 🔧 Changes:
+
+* Update heading `What's New in v0.0.3` → `What's New in v0.0.4`
+* Reflect more precise wording for the fixes (optional)
+
+---
+
 # ✨ Auto Launcher
 
 > Automate app name, version, bundle ID, and launcher icon updates across Android and iOS — ideal for CI/CD and manual workflows.
 
 ---
 
-## 📦 What's New in v0.0.3
+## 📦 What's New in v0.0.4
 
-* 🎯 Fixed: App icon generation now works on Android and iOS  
-* 🔄 Improved: Dependency compatibility with commonly used packages
+* 🎯 Fixed: App icon generation now works reliably on Android and iOS  
+* 🔄 Improved: Dependency compatibility by aligning `image` and `archive` versions
 
 ---
 
@@ -157,5 +166,6 @@ To use the latest version directly from GitHub:
 dependencies:
   auto_launcher:
     git:
-      url: https://github.com/StartPackage/auto_launcher
+      url: https://github.com/StartPackage/auto_launcher.git
+      ref: main
 ```

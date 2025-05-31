@@ -1,5 +1,5 @@
-## [0.0.3] - 2025-05-31
+## [0.0.4] - 2025-05-31
 
 ### Fixed
-- Fixed app icon generation for Android and iOS platforms
-- Resolved package dependency conflicts by adjusting `image` and `archive` versions
+- Fixed cross-platform icon generation logic for Android and iOS
+- Resolved conflicts caused by `get_cli` by downgrading `image` to `^3.2.2` and `archive` to `^3.3.2` for compatibility
