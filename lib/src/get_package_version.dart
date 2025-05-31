@@ -5,37 +5,48 @@ import 'package:yaml/yaml.dart';
 
 String getPackageVersion() {
   try {
-    final configFile = File(p.join('.dart_tool', 'package_config.json'));
-    if (!configFile.existsSync()) return 'Unknown';
-
-    final configJson = jsonDecode(configFile.readAsStringSync());
-    final packages = configJson['packages'] as List<dynamic>;
-
-    final thisPackage = packages.firstWhere(
-      (pkg) => pkg['name'] == 'auto_launcher',
-      orElse: () => null,
-    );
-
-    if (thisPackage == null) return 'Unknown';
-
-    String rootUri = thisPackage['rootUri'] as String;
-    String pubspecPath;
-
-    if (Uri.parse(rootUri).isAbsolute) {
-      // Absolute URI (rare)
-      pubspecPath = p.join(Uri.parse(rootUri).toFilePath(), 'pubspec.yaml');
-    } else {
-      // Relative URI
-      pubspecPath = p.join(Directory.current.path, rootUri, 'pubspec.yaml');
+    final packageConfigPath = p.join('.dart_tool', 'package_config.json');
+    final packageConfigFile = File(packageConfigPath);
+    if (!packageConfigFile.existsSync()) {
+      print('[DEBUG] package_config.json not found at $packageConfigPath');
+      return 'Unknown';
     }
 
-    final pubspecFile = File(p.normalize(pubspecPath));
-    if (!pubspecFile.existsSync()) return 'Unknown';
+    final configJson = jsonDecode(packageConfigFile.readAsStringSync());
+    final packages = configJson['packages'] as List<dynamic>;
+
+    final autoLauncher = packages.firstWhere(
+      (pkg) => pkg['name'] == 'auto_launcher',
+      orElse: () {
+        print('[DEBUG] auto_launcher not found in package_config.json');
+        return null;
+      },
+    );
+
+    if (autoLauncher == null) return 'Unknown';
+
+    final rootUri = autoLauncher['rootUri'] as String;
+    print('[DEBUG] Found rootUri: $rootUri');
+
+    final pubspecPath = Uri.parse(rootUri).isAbsolute
+        ? p.join(Uri.parse(rootUri).toFilePath(), 'pubspec.yaml')
+        : p.normalize(p.join(Directory.current.path, rootUri, 'pubspec.yaml'));
+
+    print('[DEBUG] Resolved pubspec path: $pubspecPath');
+
+    final pubspecFile = File(pubspecPath);
+    if (!pubspecFile.existsSync()) {
+      print('[DEBUG] pubspec.yaml does not exist at $pubspecPath');
+      return 'Unknown';
+    }
 
     final content = pubspecFile.readAsStringSync();
     final yaml = loadYaml(content);
-    return yaml['version']?.toString() ?? 'Unknown';
+    final version = yaml['version']?.toString() ?? 'Unknown';
+    print('[DEBUG] Parsed version: $version');
+    return version;
   } catch (e) {
+    print('[DEBUG] Exception in getPackageVersion: $e');
     return 'Unknown';
   }
 }
